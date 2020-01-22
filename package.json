@@ -1,7 +1,7 @@
 {
-  "name": "intel-flix-9900ks",
+  "name": "rindex-2en1",
   "version": "1.0.0",
-  "description": "Landing EX Page for Intel",
+  "description": "Landing Parallax for rindex",
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
