@@ -26,7 +26,7 @@
 5.0 MAIN CSS
 --------------------------------------------------------------*/
 
-.main-wrapper {
+.site-wrapper {
     position: relative;
     z-index: 1;
     width: 500px;
@@ -36,8 +36,8 @@
     font-size: 16px;
     line-height: 18px;
     font-weight: 300;
-    background-color: $color-negro;
-    color: $color-blanco;
+    background-color: $color-blanco;
+    color: $color-negro;
     @media (min-width: $xs) {
         width: 100%;
     }

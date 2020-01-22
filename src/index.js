@@ -1,3 +1,11 @@
 import './assets/css/style.scss';
 
-console.log('oki doky')
+document.addEventListener("DOMContentLoaded", function() {
+    console.log('Your document is ready!');
+ });
+
+ window.addEventListener('load', function() {
+
+    console.log('All loaded!');
+
+});
