@@ -103,6 +103,9 @@
         @media (min-width: $lg) {
             left: 32%;
         }
+        @media (min-width: $xlg) {
+            left: 38%;
+        }
 
         strong {
             text-transform: uppercase;
@@ -166,6 +169,9 @@
         @media (min-width: $md) {
             left: 83%;
             bottom: 7rem;
+        }
+        @media (min-width: $xlg) {
+            left: 76%;
         }
 
     }//.btn-cta-comprar
