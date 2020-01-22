@@ -267,12 +267,18 @@
             @extend .btn;
             @extend .btn-hover-opacity;
             display: block;
-            width: 126px;
+            width: 56px;
             position: absolute;
             z-index: 11;
             top: 50%;
             left: 50%;
             transform: translate(-50%, -50%);
+            @media (min-width: $sm) {
+                width: 86px;
+            }
+            @media (min-width: $md) {
+                width: 126px;
+            }
 
             img {
                 width: 100%;

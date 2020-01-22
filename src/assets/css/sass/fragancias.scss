@@ -178,9 +178,16 @@
 
     .flores {
         position: absolute;
-        bottom: -120px;
-        width: 120%;
-        left: -5%;
+        bottom: 40px;
+        width: 160%;
+        left: -15%;
+        z-index: 111;
+        @media (min-width: $md) {
+            z-index: 1;
+            bottom: -120px;
+            width: 120%;
+            left: -5%;
+        }
     }//.flores
 
     .bubles {
