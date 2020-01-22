@@ -1,1 +1,122 @@
-.fragancias-section {}//.fragancias-section
+.fragancias-section {
+    background-image: url('../images/background-packs.jpg');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    @media only screen and (-webkit-min-device-pixel-ratio: 1.5), only screen and (min--moz-device-pixel-ratio: 1.5), only screen and (min-resolution: 240dpi) {
+        background-image: url('../images/background-packs@2x.jpg');
+        background-size: cover;
+        background-position: center;
+        background-repeat: no-repeat;
+    }
+    @media only screen and (-webkit-min-device-pixel-ratio: 2.25), only screen and (min--moz-device-pixel-ratio: 2.25), only screen and (min-resolution: 2.25dppx) {
+        background-image: url('../images/background-packs@3x.jpg');
+        background-size: cover;
+        background-position: center;
+        background-repeat: no-repeat;
+    }
+    @media (min-width: $md) {
+        background-image: url('../images/background-packs-desktop.jpg');
+        background-size: cover;
+        background-position: center;
+        background-repeat: no-repeat;
+    }
+}//.fragancias-section
+
+.fragancias {
+    position: relative;
+    height: calc(100vh - 5.75rem);
+    overflow: hidden;
+    @media (min-width: $md) {
+        height: 627px;
+    }
+}//.fragancias
+
+.fragancia {
+    position: absolute;
+    z-index: 1;
+    transition: all $transitionSpeed;
+    bottom: -1000px;
+    left: 0;
+    width: 100%;
+    height: 100%;
+}//.fragancia-item
+
+.fragancia.active {
+    transition: all $transitionSpeed;
+    bottom: 0;
+}//.fragancia-item.active
+
+.fragancia-wrapper {
+    padding: 0 .2rem;
+    position: relative;
+    height: 100%;
+
+    .tag {
+        position: absolute;
+        left: 50%;
+        top: 4rem;
+        transform: translateX(-50%);
+        width: 80%;
+        margin: 0 auto;
+        background-color: $color-blanco;
+        color: $color-rojo;
+        font-weight: 700;
+        font-size: .9rem;
+        text-align: center;
+        border-radius: .5rem;
+        border-top-left-radius: 1rem;
+        padding: 1rem 1rem;
+
+        strong {
+            text-transform: uppercase;
+            font-size: 3.7rem;
+            line-height: 4rem;
+        }
+    }//.tag
+
+    .pack {
+        display: block;
+        max-width: 574px;
+        width: 100%;
+        position: absolute;
+        top: 55%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        @media (min-width: $md) {
+            max-width: 1039px;
+        }
+        
+    }//.pack
+
+    .btn-cta-comprar {
+        @extend .btn;
+        @extend .btn-hover-opacity;
+        position: absolute;
+        left: 50%;
+        transform: translateX(-50%);
+        bottom: 1.8rem;
+        background-color: $color-rojo;
+        color: $color-blanco;
+        font-weight: 700;
+        font-size: 2.5rem;
+        line-height: 3rem;
+        padding: 0.7rem 1.3rem;
+        text-align: center;
+        border-radius: .3rem;
+        border-top-left-radius: 1rem;
+        border-bottom-right-radius: 1rem;
+        text-transform: uppercase;
+    }//.btn-cta-comprar
+
+}//.fragancia
+
+.fragancia.flores {
+
+}//.fragancia.flores
+.fragancia.brisa-fresca {
+
+}//.fragancia.brisa-fresca
+.fragancia.campos-lavanda {
+
+}//.fragancia.campos-lavanda
