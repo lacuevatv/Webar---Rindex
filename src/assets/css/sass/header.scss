@@ -1,3 +1,213 @@
 .main-header {
+    position: relative;
+    z-index: 11;
+    padding-top: 5.75rem;
 
+    @media (min-width: $md) {
+        padding-top: 3.68rem;
+    }
+
+
+    
 }//.main-header
+
+.main-nav {
+    position: fixed;
+    z-index: 11;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 5.75rem;
+    background-color: $color-blanco;
+    padding: 0 $paddingSize;
+    display: flex;
+    display: -o-flex;
+    display: -ms-flex;
+    display: -moz-flex;
+    display: -webkit-flex;
+    align-items: center;
+    justify-content: space-between;
+
+    @media (min-width: $md) {
+        height: 3.68rem;
+        padding: 0 $paddingSizeMD;
+    }
+    @media (min-width: $lg) {
+        padding: 0 $paddingSizeLG;
+    }
+
+    .brand-name {
+        img {
+            width: 95px;
+        }
+    }//.brand-name
+
+    .toggle {
+        position: relative;
+        display: block;
+        width: 50px;
+        height: 50px;
+        @extend .btn;
+        @extend .btn-hover-opacity;
+        @media (min-width: $md) {
+            display: none;
+        }
+        .tog1 {
+            opacity: 1;
+            display: block;
+            position: absolute;
+            top: 30%;
+            left: 50%;
+            width: 90%;
+            height: 2px;
+            background-color: $color-rojo;
+            transform: translateX(-50%);
+            transform-origin: top left;
+            transition: all $transitionSpeed;
+        }
+        .tog2 {
+            opacity: 1;
+            display: block;
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            width: 90%;
+            height: 2px;
+            background-color: $color-rojo;
+            transform: translateX(-50%);
+            transition: all $transitionSpeed;
+        }
+        .tog3 {
+            opacity: 1;
+            display: block;
+            position: absolute;
+            top: 70%;
+            left: 50%;
+            width: 90%;
+            height: 2px;
+            background-color: $color-rojo;
+            transform: translateX(-50%);
+            transform-origin: top left;
+            transition: all $transitionSpeed;
+        }
+    }//.toggle
+
+    .toggle.open {
+        .tog2 {
+            opacity: 0;
+        }
+        .tog1 {
+            top: 15%;
+            left: 66%;
+            transform: translateX(-50%) rotate(45deg);
+            transition: all $transitionSpeed;
+        }
+
+        .tog3 {
+            top: 80%;
+            left: 62%;
+            transform: translateX(-50%) rotate(-45deg);
+            transition: all $transitionSpeed;
+        }
+    }//.toggle.open
+
+
+    .main-menu {
+        color: $color-blanco;
+        font-weight: 500;
+        font-size: 1.25rem;
+        position: absolute;
+        top: 5.75rem;
+        left: 0;
+        width: 100%;
+        height: 0;
+        background-color: $color-rojo;
+        overflow: hidden;
+        transition: all $transitionSpeed;
+        opacity: 0;
+        @media (min-width: $md) {
+            opacity: 1;
+            overflow: visible;
+            height: auto!important;
+            color: $color-rojo;
+            background-color: transparent;
+            position: relative;
+            top: 0;
+            left: 0;
+            width: auto;
+            display: flex;
+            display: -o-flex;
+            display: -ms-flex;
+            display: -moz-flex;
+            display: -webkit-flex;
+        }
+
+        li {
+            margin: 2rem;
+
+            &:first-child {
+                margin-top: 4rem;
+                @media (min-width: $md) {
+                    margin: 0;
+                }
+            }
+
+            &:last-child {
+                margin-bottom: 4rem;
+                @media (min-width: $md) {
+                    margin: 0;
+                    a {
+                        padding-right: 0;
+                        &:after {
+                            content: none;
+                        }
+                    }
+                }
+            }
+
+
+            a {
+                width: 100%;
+                display: block;
+                text-align: center;
+                position: relative;
+                @extend .btn;
+                @extend .btn-hover-opacity;
+            }
+
+            @media (min-width: $md) {
+                margin-right: 2rem;
+
+                a {
+                    text-align: left;
+                    padding: 0 1rem;
+
+                    &:after {
+                        content: '';
+                        position: absolute;
+                        height: 100%;
+                        width: 1px;
+                        background-color: $color-rojo;
+                        right: 0;
+                        bottom: 0;
+                    }
+                }
+            }//mediaquerie md
+
+        }//li
+    }//.main-menu 
+
+
+    .main-menu.open {
+        transition: all $transitionSpeed;
+        display: block;
+        opacity: 1;
+    }
+
+}//.main-nav
+
+
+.contenido-header {
+    position: relative;
+    z-index: 1;
+}//.contenido-header
