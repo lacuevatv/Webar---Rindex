@@ -29,12 +29,12 @@
 .site-wrapper {
     position: relative;
     z-index: 1;
-    width: 500px;
-    max-width: 1000px;
+    width: 100%;
+    overflow-x: hidden;
     margin: 0;
     font-family: $fuente-principal;
     font-size: 16px;
-    line-height: 18px;
+    line-height: 22px;
     font-weight: 300;
     background-color: $color-amarillo;
     color: $color-blanco;
@@ -42,7 +42,20 @@
         width: 100%;
     }
     @media (min-width: $sm) {
+        overflow-x: visible;
         font-size: 14px;
         line-height: 16px;
     }
-}//.main-wrapper
+}//.site-wrapper
+
+/*--------------------------------------------------------------
+6.0 footer
+--------------------------------------------------------------*/
+
+@import 'sass/footer';
+
+/*--------------------------------------------------------------
+7.0 header
+--------------------------------------------------------------*/
+
+@import 'sass/header';

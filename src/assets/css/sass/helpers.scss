@@ -16,3 +16,15 @@ small {
 .text-lowercase {
     text-transform: lowercase;
 }
+
+.btn {
+    cursor: pointer;
+    transition: all $transitionSpeed;
+}
+
+.btn-hover-opacity {
+    &:hover {
+        transition: all $transitionSpeed;
+        opacity: .7;
+    }
+}
