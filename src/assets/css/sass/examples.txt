@@ -35,7 +35,7 @@ justify-content: space-between;
 
 
 <picture>
-  <source srcset="mdn-logo.svg" type="image/svg+xml">
+  <source srcset="assets/images/mdn-logo.svg" type="image/svg+xml">
   <source srcset="assets/images/intel-logo-blanco.png 1x, assets/images/intel-logo-blanco@2x.png 2x" media="(min-width: 300px)">
   <img src="assets/images/intel-logo-blanco.png" alt="Intel Logo">
 </picture>
