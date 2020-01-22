@@ -68,3 +68,202 @@
     position: relative;
     z-index: 1;
 }//.main-wrapper
+
+@import 'sass/fragancias';
+
+.porque-section {
+    .detergente-wrapper {
+
+    }//.detergente-wrapper
+
+    .suavizante-wrapper {
+
+    }//.suavizante-wrapper
+
+    .tag-prueba {
+
+    }//.tag-prueba
+
+}//.porque-section
+
+.video-section {}//.video-section
+
+.comprar-section {
+    padding: 0 $paddingSize;
+    .comprar-contenido {
+        background-color: $color-blanco;
+        border-radius: 1rem;
+        border-top-left-radius: 2rem;
+        border-bottom-right-radius: 2rem;
+        padding: 2.68rem 2.18rem 4rem;
+
+        @media (min-width: $md) {
+            display: flex;
+            display: -o-flex;
+            display: -ms-flex;
+            display: -moz-flex;
+            display: -webkit-flex;
+            flex-wrap: wrap;
+            justify-content: space-around;
+            border-radius: .4rem;
+            border-top-left-radius: 1rem;
+            border-bottom-right-radius: 1rem;
+        }
+
+        h2 {
+            font-weight: 700;
+            color: $color-rojo;
+            font-size: 1.75rem;
+            line-height: 1.75rem;
+            text-align: center;
+            margin-bottom: 3rem;
+            @media (min-width: $md) {
+                width: 100%;
+                font-size: 2.5rem;
+                line-height: 2.5rem;
+            }
+        }
+        
+        h3 {
+            width: 100%;
+            font-weight: 500;
+            color: $color-rojo;
+            font-size: .9rem;
+            text-transform: uppercase;
+            text-align: center;
+            @media (min-width: $sm) {
+                font-size: 1rem;
+            }
+            @media (min-width: $md) {
+                position: absolute;
+                bottom: .5rem;
+                left: 0;
+            }
+            @media (min-width: $lg) {
+                font-size: 1.3rem;
+            }
+        }
+
+        .tiendas-online {
+            position: relative;
+            padding: 1.3rem 1.7rem .3rem;
+            border: 2px solid $color-rojo;
+            border-radius: 1rem;
+            border-top-left-radius: 2rem;
+            border-bottom-right-radius: 2rem;
+            margin-bottom: 2rem;
+            @media (min-width: $md) {
+                width: 45%;
+                margin-bottom: 0;
+                border-radius: .4rem;
+                border-top-left-radius: 1rem;
+                border-bottom-right-radius: 1rem;
+                padding: 2.4rem 1.7rem 2rem;
+            }
+
+            .tiendas {
+                display: flex;
+                display: -o-flex;
+                display: -ms-flex;
+                display: -moz-flex;
+                display: -webkit-flex;
+                align-items: center;
+                justify-content: space-around;
+                margin-bottom: .8rem;
+                
+
+                li {
+                    width: 33%;
+
+                    img {
+                        display: block;
+                        width: 80%;
+                        margin: 0 auto;
+                    }
+
+                    img.exito {
+                        max-width: 101px;
+                        @media (min-width: $md) {
+                            max-width: 137px;
+                        }
+                    }
+                    img.carulla {
+                        max-width: 91px;
+                        @media (min-width: $md) {
+                            max-width: 123px;
+                        }
+                    }
+                    img.jumbo {
+                        width: 75%;
+                        max-width: 64px;
+                        @media (min-width: $md) {
+                            max-width: 89px;
+                        }
+                    }
+                }
+            }//.tiendas
+        }//.tiendas-online
+
+        .apps-online {
+            position: relative;
+            padding: 1.3rem 1.7rem .3rem;
+            border: 2px solid $color-rojo;
+            border-radius: 1rem;
+            border-top-left-radius: 2rem;
+            border-bottom-right-radius: 2rem;
+            @media (min-width: $md) {
+                width: 45%;
+                border-radius: .4rem;
+                border-top-left-radius: 1rem;
+                border-bottom-right-radius: 1rem;
+                padding: 2.4rem 1.7rem 2rem;
+            }
+
+            .apps {
+                display: flex;
+                display: -o-flex;
+                display: -ms-flex;
+                display: -moz-flex;
+                display: -webkit-flex;
+                align-items: center;
+                justify-content: space-around;
+                margin-bottom: 1rem;
+                @media (min-width: $md) {
+                    margin-bottom: 0;
+                    margin-top: 0.6rem;
+                }
+
+                li {
+                    width: 33%;
+
+                    img {
+                        display: block;
+                        width: 80%;
+                        margin: 0 auto;
+                    }
+
+                    img.merqueo {
+                        max-width: 88px;
+                        @media (min-width: $md) {
+                            max-width: 119px;
+                        }
+                    }
+                    img.rappi {
+                        max-width: 93px;
+                        @media (min-width: $md) {
+                            max-width: 125px;
+                        }
+                    }
+                    img.olimpica {
+                        width: 75%;
+                        max-width: 75px;
+                        @media (min-width: $md) {
+                            max-width: 100px;
+                        }
+                    }
+                }
+
+            }//.apps
+        }//apps-online
+    }//.comprar-contenido
+}//.comprar-section
