@@ -2,9 +2,13 @@
     position: relative;
     z-index: 11;
     padding-top: 5.75rem;
+    background: url('../images/background.jpg');
+    background-repeat: no-repeat;
+    background-size: cover;
 
     @media (min-width: $md) {
         padding-top: 3.68rem;
+        background: url('../images/background-desktop.jpg');
     }
 
 
@@ -210,4 +214,11 @@
 .contenido-header {
     position: relative;
     z-index: 1;
+
+
+    .header-tag {
+        h4 {}
+        p {}
+    }//.header-tag
+
 }//.contenido-header

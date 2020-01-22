@@ -77,10 +77,20 @@
     background-size: cover;
     padding: 8rem 0 3.3rem;
 
+    @media only screen and (-webkit-min-device-pixel-ratio: 1.5), only screen and (min--moz-device-pixel-ratio: 1.5), only screen and (min-resolution: 240dpi) {
+        background-image: url('../images/background-porque@2x.jpg');
+        background-size: cover;
+    }
+    @media only screen and (-webkit-min-device-pixel-ratio: 2.25), only screen and (min--moz-device-pixel-ratio: 2.25), only screen and (min-resolution: 2.25dppx) {
+        background-image: url('../images/background-porque@3x.jpg');
+        background-size: cover;
+    }
+
     @media (min-width: $md) {
         background-image: url('../images/background-porque-desktop.jpg');
         padding: 4rem 0 2.5rem;
     }
+    
     @media (min-width: $lg) {
         padding: 5.5rem 0 4.8rem;
     }
