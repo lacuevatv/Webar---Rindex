@@ -1,27 +1,41 @@
 import './assets/css/style.scss';
+import smoothScroll from './assets/js/smoth-scroll';
+import parallaxAnimation from './assets/js/parallax-animation';
 
 document.addEventListener("DOMContentLoaded", function() {
-    let btnToggle = document.querySelector('.toggle');
 
     //menu:
+    let btnToggle = document.querySelector('.toggle');
     btnToggle.addEventListener('click', function(){
         togleMenu();
     });
+
+    //btnscroll
+    let btnscroll = document.querySelectorAll('.btn-scroll');
+    for (let index = 0; index < btnscroll.length; index++) {
+        btnscroll[index].addEventListener('click', function(){
+            event.preventDefault();
+            let href = '#' + this.getAttribute('href');
+            smoothScroll( href );
+        });
+    }
+
+    //video play
+    let playButton = document.querySelector('.play-btn');
+    playButton.addEventListener('click', function(){
+        playVideo();
+    });
+
  });
 
  window.addEventListener('load', function() {
 
-    console.log('All loaded!');
-
+    parallaxAnimation();
 });
 
 function togleMenu () {
     let btnToggle = document.querySelector('.toggle');
     let mainMenu = document.querySelector('.main-menu');
-
-    /*if ( window.innerWidth > 992 ) {
-        mainMenu.style.display = 'flex'; 
-    }*/
 
     if ( mainMenu.classList.contains('open') ) {
         //cerrar menu
@@ -39,4 +53,18 @@ function togleMenu () {
         mainMenu.classList.add('open');
         btnToggle.classList.add('open');
     }
+}
+
+//abre el video
+function playVideo() {
+    let iframe = document.querySelector('.video-iframe');
+    let btnPlay = document.querySelector('.play-btn');
+    let screenshot = document.querySelector('.video-screenshot');
+
+    iframe.setAttribute('src', btnPlay.getAttribute('data-src')  );
+    screenshot.style.opacity = '0';
+    
+    setTimeout(() => {
+        screenshot.style.display = 'none';
+    }, 1000);
 }
