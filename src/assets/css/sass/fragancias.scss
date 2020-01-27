@@ -80,6 +80,7 @@
     transition: opacity $transitionSpeed;
     bottom: 0;
     opacity: 1;
+
 }//.fragancia-item.active
 
 .fragancia-wrapper {
@@ -104,6 +105,7 @@
         border-top-left-radius: 1rem;
         padding: 1rem 1rem;
         z-index: 111;
+        transition: all $transitionSpeed;
         @media (min-width: $xs) {
             top: 4rem;
             width: 80%;
@@ -198,7 +200,7 @@
         z-index: 111;
         @media (min-width: $md) {
             z-index: 1;
-            bottom: -120px;
+            bottom: -520px;
             width: 120%;
             left: -5%;
         }
@@ -221,15 +223,32 @@
 
 }//.fragancia
 
-.fragancia-wrapper.flores {
-
-}//.fragancia.flores
 .fragancia-wrapper.brisa-fresca {
     .tag {
         color: $color-azul;
     }
     .btn-cta-comprar {
         background-color: $color-azul;
+    }
+
+    .flores {
+        bottom: -140px;
+        @media (min-width: $sm) {
+            bottom: -320px;
+        }
+        @media (min-width: $md) {
+            bottom: -420px;
+        }
+    }//.flores
+
+    .bubles {
+        bottom: -290px;
+        @media (min-width: $sm) {
+            bottom: -730px;
+        }
+        @media (min-width: $md) {
+            bottom: -800px;
+        }
     }
 }//.fragancia.brisa-fresca
 .fragancia-wrapper.campos-lavanda {
@@ -238,5 +257,25 @@
     }
     .btn-cta-comprar {
         background-color: $color-purpura;
+    }
+
+    .flores {
+        bottom: -70px;
+        @media (min-width: $sm) {
+            bottom: -440px;
+        }
+        @media (min-width: $md) {
+            bottom: -490px;
+        }
+    }
+
+    .bubles {
+        bottom: -450px;
+        @media (min-width: $sm) {
+            bottom: -1280px;
+        }
+        @media (min-width: $md) {
+            bottom: -1230px;
+        }
     }
 }//.fragancia.campos-lavanda

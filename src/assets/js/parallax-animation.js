@@ -18,9 +18,9 @@ export default function parallaxAnimation() {
     let outParallax = false;//cundo se termina el efecto se tiene que salir una sola vez, sino se vuelve cíclico y no sale mas
     
     //define cada cuanto se cambian los activos de las fragancias
-    let pixelesEntrePasos = 700;
+    let pixelesEntrePasos = 1000;
     if ( window.innerWidth < 992) {
-        pixelesEntrePasos = 1000;
+        pixelesEntrePasos = 1200;
     }
     let barraPaso1 = header.offsetHeight - nav.offsetHeight + pixelesEntrePasos;
     let barraPaso2 = barraPaso1 + pixelesEntrePasos;
@@ -76,7 +76,6 @@ export default function parallaxAnimation() {
                     mainMenu.classList.remove('open');
                     mainMenu.style.height = '0';
                     document.querySelector('.toggle').classList.remove('open');
-
                 }
             }
         });
@@ -88,7 +87,16 @@ export default function parallaxAnimation() {
         let barra = window.scrollY; //posicion actual de scroll
         let avanceBarra = barra-oldBarra;//cuanto avanzó la posicion
         oldBarra = barra;//guarda la barra actual
-    
+        
+        //burbujas
+        let bubles = fragancia[pasos].querySelector('.bubles');
+        bubles.style.transform = 'translateY(-' + (barra/19) + '%)';
+
+        //flores
+        let flores = fragancia[pasos].querySelector('.flores');
+        flores.style.transform = 'translateY(-' + (barra/59) + '%)';
+
+        //paso de fragancias
         if (  (barra >= (  header.offsetHeight - nav.offsetHeight) ) &&  barra<barraOut) {
             console.log(barra);
             outParallax = false;
@@ -210,12 +218,12 @@ export default function parallaxAnimation() {
             fragancia[pasos].style.transition = 'opacity 500ms';
             fragancia[oldPaso].style.transition = 'opacity 500ms';
         } else if (direccion == 'next') {
-            fragancia[pasos].style.transition = 'all 500ms';
+            fragancia[pasos].style.transition = 'all 300ms';
+            fragancia[oldPaso].style.transition = 'opacity 500ms';
         }
 
         fragancia[pasos].classList.add('active');
         fragancia[oldPaso].classList.remove('active');
-        
         
     }
 
@@ -280,6 +288,8 @@ export default function parallaxAnimation() {
         comprarSection.style.left = valoresPorDefecto.comprarSection.left;
         comprarSection.style.top =  valoresPorDefecto.comprarSection.top;
     }
+
+
 
 
     //chequea si el elemento es visible
