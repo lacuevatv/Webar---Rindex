@@ -66,12 +66,14 @@
 
 .main-wrapper {
     position: relative;
-    z-index: 1;
+    z-index: 11;
 }//.main-wrapper
 
 @import 'sass/fragancias';
 
 .porque-section {
+    position: relative;
+    z-index: 111;
     background-image: url('../images/background-porque.jpg');
     background-repeat: no-repeat;
     background-size: cover;
@@ -224,7 +226,10 @@
 .video-section {
     position: relative;
     z-index: 1;
+    left: 0;
+    top: 0;
     height: 230px;
+    width: 100%;
     @media (min-width: $xs) {
         height: 500px;
     }
@@ -337,6 +342,10 @@
 }//.video-section
 
 .comprar-section {
+    position: relative;
+    left: 0;
+    top: 0;
+    width: 100%;
     padding: 0 $paddingSize;
     .comprar-contenido {
         background-color: $color-blanco;

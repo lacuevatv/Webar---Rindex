@@ -1,28 +1,9 @@
 .fragancias-section {
     position: relative;
-    z-index: 1;
-    background-image: url('../images/background-packs.jpg');
-    background-size: cover;
-    background-position: center;
-    background-repeat: no-repeat;
-    @media only screen and (-webkit-min-device-pixel-ratio: 1.5), only screen and (min--moz-device-pixel-ratio: 1.5), only screen and (min-resolution: 240dpi) {
-        background-image: url('../images/background-packs@2x.jpg');
-        background-size: cover;
-        background-position: center;
-        background-repeat: no-repeat;
-    }
-    @media only screen and (-webkit-min-device-pixel-ratio: 2.25), only screen and (min--moz-device-pixel-ratio: 2.25), only screen and (min-resolution: 2.25dppx) {
-        background-image: url('../images/background-packs@3x.jpg');
-        background-size: cover;
-        background-position: center;
-        background-repeat: no-repeat;
-    }
-    @media (min-width: $md) {
-        background-image: url('../images/background-packs-desktop.jpg');
-        background-size: cover;
-        background-position: center;
-        background-repeat: no-repeat;
-    }
+    z-index: 11;
+    left: 0;
+    top: 0;
+    
 }//.fragancias-section
 
 .sugerido {
@@ -44,8 +25,26 @@
 .fragancias {
     position: relative;
     z-index: 1;
+    width: 100%;
     height: calc(100vh - 5.75rem);
     overflow: hidden;
+    left: 0;
+    background-image: url('../images/background-packs.jpg');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    @media only screen and (-webkit-min-device-pixel-ratio: 1.5), only screen and (min--moz-device-pixel-ratio: 1.5), only screen and (min-resolution: 240dpi) {
+        background-image: url('../images/background-packs@2x.jpg');
+        background-size: cover;
+        background-position: center;
+        background-repeat: no-repeat;
+    }
+    @media only screen and (-webkit-min-device-pixel-ratio: 2.25), only screen and (min--moz-device-pixel-ratio: 2.25), only screen and (min-resolution: 2.25dppx) {
+        background-image: url('../images/background-packs@3x.jpg');
+        background-size: cover;
+        background-position: center;
+        background-repeat: no-repeat;
+    }
     @media (min-width: $sm) {
         height: calc(100vh - 5.75rem);
     }
@@ -53,14 +52,23 @@
         height: 750px;
     }
     @media (min-width: $md) {
+        background-image: url('../images/background-packs-desktop.jpg');
+        background-size: cover;
+        background-position: center;
+        background-repeat: no-repeat;
         height: 627px;
+    }
+    
+    
+    @media (min-width: $md) {
+        
     }
 }//.fragancias
 
 .fragancia {
     position: absolute;
     z-index: 1;
-    transition: all $transitionSpeed;
+    transition: opacity $transitionSpeed;
     bottom: -1000px;
     left: 0;
     width: 100%;
@@ -69,7 +77,7 @@
 }//.fragancia-item
 
 .fragancia.active {
-    transition: all $transitionSpeed;
+    transition: opacity $transitionSpeed;
     bottom: 0;
     opacity: 1;
 }//.fragancia-item.active

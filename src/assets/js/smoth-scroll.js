@@ -8,6 +8,10 @@ export default function smoothScroll(eID) {
         while (node.offsetParent && node.offsetParent != document.body) {
             node = node.offsetParent;
             y += node.offsetTop;
+
+            if ( window.innerWidth < 768) {
+                y-=50;   
+            }
         }
         return y;
     }

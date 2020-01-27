@@ -1,13 +1,10 @@
 .main-header {
     position: relative;
-    z-index: 11;
+    z-index: 111;
     padding-top: 5.75rem;
     @media (min-width: $md) {
         padding-top: 3.68rem;
-    }
-
-
-    
+    } 
 }//.main-header
 
 .main-nav {

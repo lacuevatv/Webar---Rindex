@@ -2,6 +2,8 @@ import './assets/css/style.scss';
 import smoothScroll from './assets/js/smoth-scroll';
 import parallaxAnimation from './assets/js/parallax-animation';
 
+window.scrollTo(0, 0);
+
 document.addEventListener("DOMContentLoaded", function() {
 
     //menu:
@@ -17,8 +19,17 @@ document.addEventListener("DOMContentLoaded", function() {
             event.preventDefault();
             let href = '#' + this.getAttribute('href');
             smoothScroll( href );
+            if (window.innerWidth < 992) {
+                togleMenu();
+            }
+            
         });
     }
+
+    document.querySelector('.scroll-down-btn').addEventListener('click', function(){
+        event.preventDefault();
+        smoothScroll( '#fragancias' );
+    });
 
     //video play
     let playButton = document.querySelector('.play-btn');
@@ -31,6 +42,10 @@ document.addEventListener("DOMContentLoaded", function() {
  window.addEventListener('load', function() {
 
     parallaxAnimation();
+
+    window.addEventListener('resize', function(){
+        parallaxAnimation();
+    });
 });
 
 function togleMenu () {
@@ -43,12 +58,8 @@ function togleMenu () {
         mainMenu.style.height = '0';
         btnToggle.classList.remove('open');
 
-        setTimeout(function(){
-            //mainMenu.style.display = 'none'; 
-        },600);
     } else {
         //abrir menu
-        //mainMenu.style.display = 'block'; 
         mainMenu.style.height = mainMenu.scrollHeight + 'px';
         mainMenu.classList.add('open');
         btnToggle.classList.add('open');
