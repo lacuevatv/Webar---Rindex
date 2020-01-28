@@ -22,7 +22,9 @@ export default function parallaxAnimation() {
     if ( window.innerWidth < 992) {
         pixelesEntrePasos = 1200;
     }
-    let barraPaso1 = header.offsetHeight - nav.offsetHeight + pixelesEntrePasos;
+
+    let parallaxIn = header.offsetHeight - nav.offsetHeight;
+    let barraPaso1 = parallaxIn + pixelesEntrePasos;
     let barraPaso2 = barraPaso1 + pixelesEntrePasos;
     let barraOut = barraPaso2 + pixelesEntrePasos;
 
@@ -82,7 +84,8 @@ export default function parallaxAnimation() {
     }
     
     //evento scroll
-    window.addEventListener('scroll', function(){
+    window.addEventListener('scroll', eventoScroll);
+    function eventoScroll (){
         //variables posicion
         let barra = window.scrollY; //posicion actual de scroll
         let avanceBarra = barra-oldBarra;//cuanto avanzó la posicion
@@ -97,8 +100,8 @@ export default function parallaxAnimation() {
         flores.style.transform = 'translateY(-' + (barra/59) + '%)';
 
         //paso de fragancias
-        if (  (barra >= (  header.offsetHeight - nav.offsetHeight) ) &&  barra<barraOut) {
-            console.log(barra);
+        if (  (barra >= (  parallaxIn ) ) &&  barra<barraOut) {
+            //console.log(barra);
             outParallax = false;
 
             //llama a funcion para cambiar de paso (para adelante o atras)
@@ -127,15 +130,13 @@ export default function parallaxAnimation() {
             //agrega altura a main para que siga scroleando
             main.style.height = (main.offsetHeight+avanceBarra) + 'px'
             
-        } else if ( barra <= (  header.offsetHeight - nav.offsetHeight) ) {
+        } else if ( barra <= parallaxIn ) {
             //antes del parallax vuelve todo a cero
-            //console.log('default');    
 
             returntoDefault();
             
         } else {
             //sale del parallax hacia abajo
-            //console.log('out');
 
             if ( !outParallax ) {
                 outParallax = true;
@@ -143,7 +144,7 @@ export default function parallaxAnimation() {
                 salirParallax(barra);
             }
         }
-    });//fin evento scroll
+    }//fin eventoscroll
 
     //ve que activo nuevo hay que poner
     function nuevoPaso(direccion, barra) {
@@ -155,10 +156,8 @@ export default function parallaxAnimation() {
                 } else {
                     if ( barra >= barraPaso1 ) {
                         pasos = 1;
-                        console.log('active1');
                         newActive(0, 'next');
                     } else if ( barra >= barraPaso2 ) {
-                        console.log('active2');
                         pasos = 2;
                         newActive(0, 'next');
                     }
@@ -168,21 +167,17 @@ export default function parallaxAnimation() {
             case 1:
                 if ( direccion == 'next' )  {
                     if ( barra >= barraPaso2 ) {
-                        console.log('active2');
                         pasos = 2;
                         newActive(1, 'next');
                     }
                 } else {
                     if ( barra <= barraPaso1 ) {
-                        console.log('active0');
                         pasos = 0;
                         newActive(1, 'prev');
                     } else if ( barra <= barraPaso2 ) {
-                        console.log('active1');
                         pasos = 1;
                         newActive(1, 'prev');
                     } else if ( barra <= barraOut ) {
-                        console.log('active2');
                         pasos = 2;
                         newActive(1, 'prev');
                     } 
@@ -194,11 +189,9 @@ export default function parallaxAnimation() {
                     return true;
                 } else {
                     if ( barra <= barraPaso1 ) {
-                        console.log('active0');
                         pasos = 0;
                         newActive(2, 'prev');
                     } else if ( barra <= barraPaso2 ) {
-                        console.log('active1');
                         pasos = 1;
                         newActive(2, 'prev');
                     }
@@ -255,6 +248,7 @@ export default function parallaxAnimation() {
 
     //devuelve todos los varlores a cuando estaban antes de iniciar
     function returntoDefault() {
+        
         outParallax = false;
         if ( pasos != 0 ) {
             let oldPasos = pasos;
@@ -313,16 +307,18 @@ export default function parallaxAnimation() {
 
     let cuentaScroll = 0;
     function goToBottomComprar() {
+
         scrollBy(0, document.body.scrollHeight );
+        
         let myscroll = setInterval(function(){
             scrollBy(0, document.body.scrollHeight-document.querySelector('.main-footer').offsetHeight);
             cuentaScroll++;
 
-            if ( cuentaScroll > 5 ) {
+            if ( cuentaScroll > 10 ) {
                 clearInterval(myscroll)
-                smoothScroll('#comprar')
+                smoothScroll('#comprar');
             }
-        },100);   
+        },100);
     }
 
 }
