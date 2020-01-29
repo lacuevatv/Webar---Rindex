@@ -30,3 +30,10 @@ small {
         opacity: .6;
     }
 }
+
+.mobile-none {
+    display: none;
+    @media (min-width: $md) {
+        display: block;
+    }
+}

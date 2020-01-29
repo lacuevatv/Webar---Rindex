@@ -71,11 +71,14 @@ function playVideo() {
     let iframe = document.querySelector('.video-iframe');
     let btnPlay = document.querySelector('.play-btn');
     let screenshot = document.querySelector('.video-screenshot');
+    let videoTag = document.querySelector('.video-tag');
 
     iframe.setAttribute('src', btnPlay.getAttribute('data-src')  );
     screenshot.style.opacity = '0';
+    videoTag.style.opacity = '0';
     
     setTimeout(() => {
         screenshot.style.display = 'none';
+        videoTag.style.display = 'none';
     }, 1000);
 }

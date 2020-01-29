@@ -96,6 +96,11 @@
     @media (min-width: $lg) {
         padding: 5.5rem 0 4.8rem;
     }
+    @media (min-width: $xlg) {
+        background-size: 80%;
+        background-position-x: center;
+    }
+    
 
     .tag-porque {
         text-align: center;
@@ -173,7 +178,7 @@
                 width: 48%;
             }
             img {
-                width: 70%;
+                width: 90%;
                 max-width: 153px;
                 @media (min-width: $sm) {
                     width: 90%;
@@ -208,7 +213,7 @@
                 width: 48%;
             }
             img {
-                width: 70%;
+                width: 90%;
                 max-width: 170px;
                 @media (min-width: $sm) {
                     width: 90%;
@@ -237,7 +242,7 @@
         height: 740px;
     }
     @media (min-width: $xlg) {
-        height: 1100px;
+        height: 860px;
     }
 
     .video-iframe {
@@ -248,6 +253,10 @@
         width: 100%;
         height: 100%;
         overflow: hidden;
+        @media (min-width: $xlg) {
+            left: 10%;
+            width: 80%;
+        }
     }
 
     .video-screenshot {
@@ -259,6 +268,11 @@
         height: 100%;
         overflow: hidden;
         background-color: black;
+
+        @media (min-width: $xlg) {
+            left: 10%;
+            width: 80%;
+        }
 
         .screenshot {
             width: 130%;
@@ -329,7 +343,8 @@
         @media (min-width: $xlg) {
             font-size: 2.0rem;
             line-height: 3.2rem;
-            width: 80%;
+            width: 70%;
+            left: 10%;
             bottom: 4rem;
             padding: .8rem $paddingSizeXLG;
         }
@@ -366,6 +381,11 @@
             border-radius: .4rem;
             border-top-left-radius: 1rem;
             border-bottom-right-radius: 1rem;
+        }
+        @media (min-width: $xlg) {
+            width: 75%;
+            left: 12%;
+            position: relative;
         }
 
         h2 {

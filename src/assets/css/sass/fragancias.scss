@@ -156,7 +156,7 @@
             top: 48%;
         }
         @media (min-width: $lg) {
-            left: 60%;
+            left: 59%;
         } 
     }//.pack
 
@@ -167,13 +167,13 @@
         z-index: 1111111;
         left: 50%;
         transform: translateX(-50%);
-        bottom: 3rem;
+        bottom: 4rem;
         background-color: $color-rojo;
         color: $color-blanco;
         font-weight: 700;
-        font-size: 2.5rem;
-        line-height: 3rem;
-        padding: 0.7rem 1.3rem;
+        font-size: 1.5rem;
+        line-height: 2rem;
+        padding: 0.7rem 2rem;
         text-align: center;
         border-radius: .3rem;
         border-top-left-radius: 1rem;
@@ -204,6 +204,10 @@
             width: 120%;
             left: -5%;
         }
+        @media (min-width: $xlg) {
+            width: 80%;
+            left: 10%;
+        }
     }//.flores
 
     .bubles {
@@ -224,6 +228,15 @@
 }//.fragancia
 
 .fragancia-wrapper.brisa-fresca {
+
+    .pack {
+        @media (min-width: $md) {
+            left: 60%;
+            top: 55%;
+        }
+    }
+    
+
     .tag {
         color: $color-azul;
     }
@@ -232,12 +245,15 @@
     }
 
     .flores {
-        bottom: -140px;
+        bottom: -170px;
         @media (min-width: $sm) {
             bottom: -320px;
         }
         @media (min-width: $md) {
             bottom: -420px;
+        }
+        @media (min-width: $xlg) {
+            bottom: -300px;
         }
     }//.flores
 
@@ -252,6 +268,14 @@
     }
 }//.fragancia.brisa-fresca
 .fragancia-wrapper.campos-lavanda {
+
+    .pack {
+        @media (min-width: $md) {
+            top: 50%;
+            left: 60%;
+        }
+    }
+
     .tag {
         color: $color-purpura;
     }
@@ -260,12 +284,15 @@
     }
 
     .flores {
-        bottom: -70px;
+        bottom: -260px;
         @media (min-width: $sm) {
             bottom: -440px;
         }
         @media (min-width: $md) {
             bottom: -490px;
+        }
+        @media (min-width: $xlg) {
+            bottom: -440px;
         }
     }
 
