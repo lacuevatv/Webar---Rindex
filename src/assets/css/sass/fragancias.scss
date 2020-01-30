@@ -22,66 +22,83 @@
     }
 }//.sugerido
 
+.sugerido.fixed {
+    @media (min-width: $md) {
+        position: fixed;
+        top: 25%;
+    }
+    @media (min-height: 500px) {
+        top: 15%;
+    }
+    @media (min-height: 750px) {
+        top: 25%;
+    }
+    @media (min-height: 799px) {
+        top: 28%;
+    }
+    @media (min-height: 889px) {
+        top: 35%;
+    }
+    @media (min-height: 959px) {
+        top: 45%;
+    }
+}
+
 .fragancias {
     position: relative;
     z-index: 1;
     width: 100%;
-    height: calc(100vh - 5.75rem);
     overflow: hidden;
     left: 0;
     background-image: url('../images/background-packs.jpg');
-    background-size: cover;
-    background-position: center;
+    background-size: 100% 100%;
+    background-position: center top;
     background-repeat: no-repeat;
+    background-attachment: fixed;
     @media only screen and (-webkit-min-device-pixel-ratio: 1.5), only screen and (min--moz-device-pixel-ratio: 1.5), only screen and (min-resolution: 240dpi) {
         background-image: url('../images/background-packs@2x.jpg');
-        background-size: cover;
-        background-position: center;
+        background-size: 100% 100%;
+        background-position: center top;
         background-repeat: no-repeat;
     }
     @media only screen and (-webkit-min-device-pixel-ratio: 2.25), only screen and (min--moz-device-pixel-ratio: 2.25), only screen and (min-resolution: 2.25dppx) {
         background-image: url('../images/background-packs@3x.jpg');
-        background-size: cover;
-        background-position: center;
+        background-size: 100% 100%;
+        background-position: center top;
         background-repeat: no-repeat;
     }
     @media (min-width: $sm) {
-        height: calc(100vh - 5.75rem);
+        //height: calc(100vh - 5.75rem);
     }
+    
+    @media (min-width: $md) {
+        background-image: url('../images/background-packs-desktop.jpg');
+        background-size: 100% 100%;
+        background-position: center bottom;
+        background-repeat: no-repeat;
+        background-attachment: fixed;
+        //height: 627px;
+    }
+    
+}//.fragancias
+
+.fragancia {
+    position: relative;
+    z-index: 1;
+    transition: all $transitionSpeed;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    opacity: 0;
+    height: calc(100vh - 5.75rem);
+    overflow: hidden;
     @media (orientation:landscape) and (max-width: 820px) {
         height: 750px;
     }
     @media (min-width: $md) {
-        background-image: url('../images/background-packs-desktop.jpg');
-        background-size: cover;
-        background-position: center;
-        background-repeat: no-repeat;
         height: 627px;
     }
-    
-    
-    @media (min-width: $md) {
-        
-    }
-}//.fragancias
-
-.fragancia {
-    position: absolute;
-    z-index: 1;
-    transition: opacity $transitionSpeed;
-    bottom: -1000px;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    opacity: 0;
 }//.fragancia-item
-
-.fragancia.active {
-    transition: opacity $transitionSpeed;
-    bottom: 0;
-    opacity: 1;
-
-}//.fragancia-item.active
 
 .fragancia-wrapper {
     padding: 0 .2rem;
@@ -245,9 +262,9 @@
     }
 
     .flores {
-        bottom: -170px;
+        bottom: -230px;
         @media (min-width: $sm) {
-            bottom: -320px;
+            bottom: -570px;
         }
         @media (min-width: $md) {
             bottom: -420px;
@@ -272,7 +289,7 @@
     .pack {
         @media (min-width: $md) {
             top: 50%;
-            left: 60%;
+            left: 59.6%;
         }
     }
 
@@ -286,13 +303,13 @@
     .flores {
         bottom: -260px;
         @media (min-width: $sm) {
-            bottom: -440px;
+            bottom: -700px;
         }
         @media (min-width: $md) {
-            bottom: -490px;
+            bottom: -650px;
         }
         @media (min-width: $xlg) {
-            bottom: -440px;
+            bottom: -610px;
         }
     }
 
@@ -306,3 +323,29 @@
         }
     }
 }//.fragancia.campos-lavanda
+
+.fragancia.active {
+    opacity: 0;
+	animation-name: slide-up;
+	animation-duration: 1s;
+	animation-fill-mode: forwards;
+
+}//.fragancia-item.active
+
+@keyframes slide-up {
+	from {opacity: 0;transform:translateY(30%);}
+	to {opacity: 1;transform:translateY(0);}
+}
+
+.fragancia.active.off {
+    opacity: 1;
+	animation-name: slide-up-off;
+	animation-duration: 1500ms;
+	animation-fill-mode: forwards;
+
+}//.fragancia-item.active.off
+
+@keyframes slide-up-off {
+	from {opacity: 1;transform:translateY(0%);}
+	to {opacity: 0;transform:translateY(-100%);}
+}
