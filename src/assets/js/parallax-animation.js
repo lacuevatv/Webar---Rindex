@@ -56,6 +56,7 @@ export default function parallaxAnimation() {
             //tag sugerido
             sugerido.classList.add('fixed');
             
+            
         } else if ( (barra >= hFrag*2 ) && (barra <= hFrag*5 ) ) {
             //console.log('activo1');
             fragancia[0].classList.add('active');

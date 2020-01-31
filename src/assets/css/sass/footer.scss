@@ -1,6 +1,7 @@
 .main-footer{
     position: relative;
-    z-index: 1;
+    z-index: 11;
+    background-color: $color-amarillo;
     padding: 3rem $paddingSize 2.1rem;
     @media (min-width: $sm) {
         padding: 4rem $paddingSize 2.1rem;

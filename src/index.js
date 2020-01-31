@@ -2,8 +2,6 @@ import './assets/css/style.scss';
 import smoothScroll from './assets/js/smoth-scroll';
 import parallaxAnimation from './assets/js/parallax-animation';
 
-window.scrollTo(0, 0);
-
 document.addEventListener("DOMContentLoaded", function() {
 
     //menu:
@@ -19,7 +17,7 @@ document.addEventListener("DOMContentLoaded", function() {
             event.preventDefault();
             let href = '#' + this.getAttribute('href');
             smoothScroll( href );
-            if (window.innerWidth < 992) {
+            if (window.innerWidth < 992 &&  btnToggle.classList.contains('open') ) {
                 togleMenu();
             }
             

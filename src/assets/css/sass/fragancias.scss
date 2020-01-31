@@ -1,6 +1,6 @@
 .fragancias-section {
     position: relative;
-    z-index: 11;
+    z-index: 1;
     left: 0;
     top: 0;
     
@@ -44,32 +44,44 @@
     }
 }
 
+.fragancias-background {
+    display: block;
+    position: fixed;
+    z-index: 1;
+    width: 100vw;
+    height: 100vh;
+    overflow: hidden;
+    left: 0;
+    top: 0;
+    background-image: url('../images/background-packs.jpg');
+    background-size: auto 100vh;
+    background-position: center top;
+    background-repeat: no-repeat;
+    @media only screen and (-webkit-min-device-pixel-ratio: 1.5), only screen and (min--moz-device-pixel-ratio: 1.5), only screen and (min-resolution: 240dpi) {
+        background-image: url('../images/background-packs@2x.jpg');
+        background-size: auto 100vh;
+        background-position: center top;
+        background-repeat: no-repeat;
+    }
+    @media only screen and (-webkit-min-device-pixel-ratio: 2.25), only screen and (min--moz-device-pixel-ratio: 2.25), only screen and (min-resolution: 2.25dppx) {
+        background-image: url('../images/background-packs@3x.jpg');
+        background-size: auto 100vh;
+        background-position: center top;
+        background-repeat: no-repeat;
+        background-attachment: fixed;
+    }
+
+    @media (min-width: $md) {
+        display: none;
+    }
+}
+
 .fragancias {
     position: relative;
     z-index: 1;
     width: 100%;
     overflow: hidden;
     left: 0;
-    background-image: url('../images/background-packs.jpg');
-    background-size: 100% 100%;
-    background-position: center top;
-    background-repeat: no-repeat;
-    background-attachment: fixed;
-    @media only screen and (-webkit-min-device-pixel-ratio: 1.5), only screen and (min--moz-device-pixel-ratio: 1.5), only screen and (min-resolution: 240dpi) {
-        background-image: url('../images/background-packs@2x.jpg');
-        background-size: 100% 100%;
-        background-position: center top;
-        background-repeat: no-repeat;
-    }
-    @media only screen and (-webkit-min-device-pixel-ratio: 2.25), only screen and (min--moz-device-pixel-ratio: 2.25), only screen and (min-resolution: 2.25dppx) {
-        background-image: url('../images/background-packs@3x.jpg');
-        background-size: 100% 100%;
-        background-position: center top;
-        background-repeat: no-repeat;
-    }
-    @media (min-width: $sm) {
-        //height: calc(100vh - 5.75rem);
-    }
     
     @media (min-width: $md) {
         background-image: url('../images/background-packs-desktop.jpg');
@@ -84,7 +96,7 @@
 
 .fragancia {
     position: relative;
-    z-index: 1;
+    z-index: 11;
     transition: all $transitionSpeed;
     bottom: 0;
     left: 0;
